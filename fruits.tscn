@@ -1,74 +1,78 @@
 [gd_scene format=3 uid="uid://j0mqpn1q2bqx"]
 
+[ext_resource type="Script" uid="uid://cutdd5gtx0o1s" path="res://fruits.gd" id="1_k7dtp"]
 [ext_resource type="Texture2D" uid="uid://bwv8xl47bdkob" path="res://assets/Fruit.png" id="1_x38wb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k7dtp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x38wb"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y7acc"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7dtp"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(16, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7o87m"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7acc"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(32, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_83ayn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7o87m"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(48, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3wkfm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_83ayn"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mwoal"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wkfm"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(16, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pltxu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwoal"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(32, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ldo3d"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pltxu"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(48, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_onbof"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldo3d"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(0, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m85c1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_onbof"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(16, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nl0wi"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m85c1"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(32, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_glhyg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl0wi"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(48, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ajjii"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_glhyg"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(0, 48, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nxg12"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajjii"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(16, 48, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kudg1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxg12"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(32, 48, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hkx3t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kudg1"]
 atlas = ExtResource("1_x38wb")
 region = Rect2(48, 48, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wc656"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hkx3t"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x38wb")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k7dtp")
 }, {
@@ -113,29 +117,24 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kudg1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hkx3t")
 }],
 "loop": true,
 "name": &"fruits",
 "speed": 5.0
 }]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_x38wb"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_wc656"]
+radius = 6.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_x38wb"]
-radius = 7.0
+[node name="RigidBody2D" type="RigidBody2D" unique_id=1231461892]
+script = ExtResource("1_k7dtp")
 
-[node name="Fruits" type="AnimatedSprite2D" unique_id=1158762673]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=729353996]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_wc656")
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_hkx3t")
 animation = &"fruits"
-frame_progress = 0.97719866
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1617003315]
-mass = 6.593
-physics_material_override = SubResource("PhysicsMaterial_x38wb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=87858733]
-shape = SubResource("CircleShape2D_x38wb")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1443719481]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_wc656")

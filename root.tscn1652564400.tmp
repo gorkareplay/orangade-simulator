@@ -3,31 +3,26 @@
 [ext_resource type="PackedScene" uid="uid://j0mqpn1q2bqx" path="res://fruits.tscn" id="1_pq8q7"]
 [ext_resource type="Script" uid="uid://npmr3rsgcpvu" path="res://root.gd" id="1_pyidc"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_pyidc"]
-b = Vector2(3, 657)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_28aoi"]
-a = Vector2(1, 650)
-b = Vector2(1148, 649)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_jnlp7"]
-a = Vector2(1155, 2)
-b = Vector2(1156, 648)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_pq8q7"]
+distance = -650.0
 
 [node name="Root" type="Node2D" unique_id=391741415]
 script = ExtResource("1_pyidc")
+
+[node name="Border" type="StaticBody2D" parent="." unique_id=2125419917]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border" unique_id=775289789]
+shape = SubResource("WorldBoundaryShape2D_pq8q7")
 
 [node name="Fruits" type="Node2D" parent="." unique_id=15547525]
 
 [node name="RigidBody2D" parent="Fruits" unique_id=1231461892 instance=ExtResource("1_pq8q7")]
 position = Vector2(80, 50)
-scale = Vector2(1, 1)
 
 [node name="Timer" type="Node2D" parent="." unique_id=378027294]
 
 [node name="Timer" type="Timer" parent="Timer" unique_id=1288983165]
-wait_time = 0.001
-autostart = true
+wait_time = 0.1
 
 [node name="Positions" type="Node2D" parent="." unique_id=476626096]
 
@@ -105,16 +100,5 @@ position = Vector2(1131, -23)
 
 [node name="Marker2D25" type="Marker2D" parent="Positions" unique_id=1622947288]
 position = Vector2(1131, -23)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1536172858]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1850770035]
-shape = SubResource("SegmentShape2D_pyidc")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1283968176]
-shape = SubResource("SegmentShape2D_28aoi")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=338674152]
-shape = SubResource("SegmentShape2D_jnlp7")
 
 [connection signal="timeout" from="Timer/Timer" to="." method="_on_timer_timeout"]
