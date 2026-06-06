@@ -4,9 +4,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dkqi6cvoew85t" path="res://player.tscn" id="2_pyidc"]
 
-[node name="Player" parent="." unique_id=318639451 instance=ExtResource("2_pyidc")]
-position = Vector2(89.999146, 151.39868)
-
 [ext_resource type="Script" uid="uid://npmr3rsgcpvu" path="res://root.gd" id="1_pyidc"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_pyidc"]
@@ -22,6 +19,9 @@ b = Vector2(1156, 648)
 
 [node name="Root" type="Node2D" unique_id=391741415]
 script = ExtResource("1_pyidc")
+
+[node name="Player" parent="." unique_id=318639451 instance=ExtResource("2_pyidc")]
+position = Vector2(89.999146, 151.39868)
 
 [node name="Fruits" type="Node2D" parent="." unique_id=15547525]
 
