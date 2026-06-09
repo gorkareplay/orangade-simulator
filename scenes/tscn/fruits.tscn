@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://j0mqpn1q2bqx"]
 
-[ext_resource type="Script" uid="uid://cutdd5gtx0o1s" path="res://fruits.gd" id="1_k7dtp"]
+[ext_resource type="Script" uid="uid://cutdd5gtx0o1s" path="res://scenes/scripts/fruits.gd" id="1_k7dtp"]
 [ext_resource type="Texture2D" uid="uid://bwv8xl47bdkob" path="res://assets/Fruit.png" id="1_x38wb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x38wb"]

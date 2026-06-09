@@ -1,6 +1,6 @@
 extends Node2D
 
-var fruit_scene = preload("res://fruits.tscn")
+var fruit_scene = preload("res://scenes/tscn/fruits.tscn")
 
 
 func _on_timer_timeout() -> void:
