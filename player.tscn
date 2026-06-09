@@ -3,15 +3,20 @@
 [ext_resource type="Texture2D" uid="uid://ct67wlsp5ft5r" path="res://icon.svg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://brrb8ipj4745b" path="res://player.gd" id="2_onrkg"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4flbx"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
 size = Vector2(128, 129)
 
-[node name="Player" type="CharacterBody2D" unique_id=91137908]
-script = ExtResource("2_onrkg")
+[node name="Player" type="Node2D" unique_id=318639451]
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=2038222715]
 texture = ExtResource("1_4flbx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1302072817]
+[node name="CharacterBody2D" type="RigidBody2D" parent="." unique_id=50403687]
+physics_material_override = SubResource("PhysicsMaterial_4flbx")
+script = ExtResource("2_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1302072817]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_4flbx")
