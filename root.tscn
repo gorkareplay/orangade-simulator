@@ -1,21 +1,20 @@
 [gd_scene format=3 uid="uid://dljtfev78hjfp"]
 
 [ext_resource type="PackedScene" uid="uid://j0mqpn1q2bqx" path="res://fruits.tscn" id="1_pq8q7"]
-
+[ext_resource type="Script" uid="uid://npmr3rsgcpvu" path="res://root.gd" id="1_pyidc"]
 [ext_resource type="PackedScene" uid="uid://dkqi6cvoew85t" path="res://player.tscn" id="2_pyidc"]
 
-[ext_resource type="Script" uid="uid://npmr3rsgcpvu" path="res://root.gd" id="1_pyidc"]
-
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_pyidc"]
-b = Vector2(3, 657)
+a = Vector2(-2, -1)
+b = Vector2(-1, 649)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_28aoi"]
-a = Vector2(1, 650)
-b = Vector2(1148, 649)
+a = Vector2(-3, 647)
+b = Vector2(1157, 648)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jnlp7"]
-a = Vector2(1155, 2)
-b = Vector2(1156, 648)
+a = Vector2(1154, 1)
+b = Vector2(1156, 647)
 
 [node name="Root" type="Node2D" unique_id=391741415]
 script = ExtResource("1_pyidc")
@@ -26,13 +25,11 @@ position = Vector2(89.999146, 151.39868)
 [node name="Fruits" type="Node2D" parent="." unique_id=15547525]
 
 [node name="RigidBody2D" parent="Fruits" unique_id=1231461892 instance=ExtResource("1_pq8q7")]
-position = Vector2(80, 50)
-scale = Vector2(1, 1)
+position = Vector2(221, 50)
 
 [node name="Timer" type="Node2D" parent="." unique_id=378027294]
 
 [node name="Timer" type="Timer" parent="Timer" unique_id=1288983165]
-wait_time = 0.001
 autostart = true
 
 [node name="Positions" type="Node2D" parent="." unique_id=476626096]
