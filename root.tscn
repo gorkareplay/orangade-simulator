@@ -9,8 +9,8 @@ a = Vector2(-2, -1)
 b = Vector2(-1, 649)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_28aoi"]
-a = Vector2(-3, 647)
-b = Vector2(1157, 648)
+a = Vector2(-2, 650)
+b = Vector2(1156, 648)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_jnlp7"]
 a = Vector2(1154, 1)
