@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cin8mi74umsx7"]
+
+[ext_resource type="Texture2D" uid="uid://bo8dp1465tboj" path="res://assets/rapefruit.png" id="1_ixjb6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ixjb6"]
+height = 24.0
+
+[node name="Grapefruit" type="CharacterBody2D" unique_id=254149228]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1405398774]
+position = Vector2(1, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ixjb6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1094693569]
+texture_filter = 1
+texture = ExtResource("1_ixjb6")

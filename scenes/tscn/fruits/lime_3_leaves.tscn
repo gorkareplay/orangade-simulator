@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://m4ayw01anl54"]
+
+[ext_resource type="Texture2D" uid="uid://cflsbc6rt6cso" path="res://assets/lime 3L.png" id="1_kea10"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7w5lm"]
+radius = 7.0
+height = 26.0
+
+[node name="Lime3Leaves" type="CharacterBody2D" unique_id=1959385433]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2020032386]
+texture_filter = 1
+texture = ExtResource("1_kea10")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1458519805]
+position = Vector2(0, -2)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_7w5lm")
