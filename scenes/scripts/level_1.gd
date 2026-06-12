@@ -1,10 +1,22 @@
 extends Control
 
+var configuration: Dictionary = {}
+
+func _ready() -> void:
+	for tile in find_children("Tile*", "TextureRect"):
+		configuration[tile.name] = null
+
 func add_item_at(item: TextureRect, at_position: Vector2) -> void:
 	for child in find_children("Tile*", "TextureRect"):
 		if child.get_global_rect().has_point(at_position):
 			item.global_position = child.global_position + item.size / 2
 			return
+
+func tile_at(at_position: Vector2) -> TextureRect:
+	for child in find_children("Tile*", "TextureRect"):
+		if child.get_global_rect().has_point(at_position):
+			return child
+	return null
 
 func item_at(at_position: Vector2) -> TextureRect:
 	for child in find_children("Lemon*", "TextureRect"):
@@ -20,7 +32,7 @@ func intersects_tile(at_position: Vector2) -> bool:
 func _get_drag_data(at_position:Vector2)-> Variant:
 	var item := item_at(at_position)
 	if item == null: return null
-	
+
 	var preview := item.duplicate() as Control
 	var wrapper := Control.new()
 	wrapper.add_child(preview)
@@ -38,8 +50,13 @@ func _can_drop_data(at_position:Vector2, data:Variant)-> bool:
 func _drop_data(at_position:Vector2, data:Variant)-> void:
 	if !data is Drag: return
 	var drag_data := data as Drag
-
 	drag_data.destination = self
+	for key in configuration:
+		if configuration[key] == drag_data.item.name:
+			configuration[key] = null
+	var tile := tile_at(at_position)
+	if tile:
+		configuration[tile.name] = drag_data.item.name
 	add_item_at(drag_data.item, at_position)
 	drag_data.item.show()
 func _on_drag_completed(data: Drag) -> void:
