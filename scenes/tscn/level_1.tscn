@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://bxx6tve6i24v7"]
+
+[ext_resource type="Script" uid="uid://cks2xhcio30xd" path="res://scenes/scripts/level_1.gd" id="1_apuvo"]
+
+[sub_resource type="Gradient" id="Gradient_5e3lr"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 0.92941177, 0.84313726, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_apuvo"]
+gradient = SubResource("Gradient_5e3lr")
+
+[sub_resource type="Gradient" id="Gradient_alh7e"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.8235294, 0.9254902, 0.6, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t4pqo"]
+gradient = SubResource("Gradient_alh7e")
+
+[sub_resource type="Gradient" id="Gradient_apuvo"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.29803923, 0.13333334, 0.25882354, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_alh7e"]
+gradient = SubResource("Gradient_apuvo")
+
+[sub_resource type="Gradient" id="Gradient_t4pqo"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.9843137, 0.7764706, 0.5921569, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vp44a"]
+gradient = SubResource("Gradient_t4pqo")
+
+[node name="Level 1" type="Control" unique_id=753753378]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_apuvo")
+
+[node name="Canvas" type="Sprite2D" parent="." unique_id=582484380]
+position = Vector2(576.49994, 398)
+scale = Vector2(17.984375, 7.906249)
+texture = SubResource("GradientTexture2D_apuvo")
+
+[node name="Palm placeholder" type="Sprite2D" parent="." unique_id=1780509329]
+position = Vector2(964, 390.99997)
+scale = Vector2(2.9843748, 6.1914067)
+texture = SubResource("GradientTexture2D_t4pqo")
+
+[node name="Tiles" type="Node2D" parent="." unique_id=697437286]
+
+[node name="Tile 1" type="TextureRect" parent="Tiles" unique_id=1127018596]
+offset_left = 62.0
+offset_top = 365.0
+offset_right = 126.0
+offset_bottom = 429.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_alh7e")
+
+[node name="Tile 2" type="TextureRect" parent="Tiles" unique_id=1255336231]
+offset_left = 212.0
+offset_top = 365.0
+offset_right = 276.0
+offset_bottom = 429.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_alh7e")
+
+[node name="Tile 3" type="TextureRect" parent="Tiles" unique_id=929706919]
+offset_left = 362.0
+offset_top = 365.0
+offset_right = 426.0
+offset_bottom = 429.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_alh7e")
+
+[node name="Tile 4" type="TextureRect" parent="Tiles" unique_id=474155992]
+offset_left = 512.0
+offset_top = 365.0
+offset_right = 576.0
+offset_bottom = 429.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_alh7e")
+
+[node name="Tile 5" type="TextureRect" parent="Tiles" unique_id=1415166629]
+offset_left = 662.0
+offset_top = 365.0
+offset_right = 726.0
+offset_bottom = 429.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_alh7e")
+
+[node name="Lemons" type="Node2D" parent="." unique_id=703086454]
+
+[node name="Lemon placeholder 1" type="TextureRect" parent="Lemons" unique_id=854547185]
+offset_left = 662.0
+offset_top = 365.0
+offset_right = 726.0
+offset_bottom = 429.0
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_vp44a")
+
+[node name="Lemon placeholder 2" type="TextureRect" parent="Lemons" unique_id=1721816347]
+offset_left = 512.0
+offset_top = 365.0
+offset_right = 576.0
+offset_bottom = 429.0
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_vp44a")
+
+[node name="Lemon placeholder 3" type="TextureRect" parent="Lemons" unique_id=1720442602]
+offset_left = 362.0
+offset_top = 365.0
+offset_right = 426.0
+offset_bottom = 429.0
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_vp44a")
+
+[node name="Lemon placeholder 4" type="TextureRect" parent="Lemons" unique_id=567699242]
+offset_left = 62.0
+offset_top = 365.0
+offset_right = 126.0
+offset_bottom = 429.0
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_vp44a")
+
+[node name="Lemon placeholder 5" type="TextureRect" parent="Lemons" unique_id=1944631135]
+offset_left = 212.0
+offset_top = 365.0
+offset_right = 276.0
+offset_bottom = 429.0
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_vp44a")
