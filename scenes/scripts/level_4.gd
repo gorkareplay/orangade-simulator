@@ -1,11 +1,12 @@
 extends Control
 
-var configuration: Dictionary = { &"Tile 1": &"Lemon placeholder 4", &"Tile 2": &"Lemon placeholder 5", &"Tile 3": &"Lemon placeholder 3", &"Tile 4": &"Lemon placeholder 2", &"Tile 5": &"Lemon placeholder 1", &"Tile extra": null }
+var configuration: Dictionary = { &"Tile 1": &"Lemon 4", &"Tile 2": &"Lemon 5", &"Tile 3": &"Lemon 3", &"Tile 4": &"Lemon 2", &"Tile 5": &"Lemon 1", &"Tile extra": null }
+signal level_4_complete
 
 func add_item_at(item: TextureRect, at_position: Vector2) -> void:
 	for child in find_children("Tile*", "TextureRect"):
 		if child.get_global_rect().has_point(at_position):
-			item.global_position = child.global_position + item.size / 2
+			item.global_position = child.global_position
 			return
 
 func tile_at(at_position: Vector2) -> TextureRect:
@@ -57,5 +58,5 @@ func _drop_data(at_position:Vector2, data:Variant)-> void:
 	drag_data.item.show()
 func _on_drag_completed(data: Drag) -> void:
 	data.item.show()
-	if configuration == { &"Tile 1": &"Lemon placeholder 1", &"Tile 2": &"Lemon placeholder 2", &"Tile 3": &"Lemon placeholder 3", &"Tile 4": &"Lemon placeholder 4", &"Tile 5": &"Lemon placeholder 5", &"Tile extra": null }:
-		emit_signal("level_1_complete")
+	if configuration == { &"Tile 1": &"Lemon 1", &"Tile 2": &"Lemon 2", &"Tile 3": &"Lemon 3", &"Tile 4": &"Lemon 4", &"Tile 5": &"Lemon 5", &"Tile extra": null }:
+		emit_signal("level_4_complete")
