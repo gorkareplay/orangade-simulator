@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://daqccliji4pjp"]
+
+[ext_resource type="PackedScene" uid="uid://dlyb563gkkao6" path="res://scenes/background/background.tscn" id="1_nup4o"]
+
+[node name="TitleScreen" type="Control" unique_id=406018498]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Background" parent="." unique_id=1821515526 instance=ExtResource("1_nup4o")]
+position = Vector2(-20, -38)
+
+[node name="PlayButton" type="Button" parent="." unique_id=1903587170]
+layout_mode = 0
+offset_left = 745.0
+offset_top = 500.0
+offset_right = 1156.0
+offset_bottom = 586.9992
+text = "play"
+icon_alignment = 1
