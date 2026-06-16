@@ -2,7 +2,7 @@ extends Node2D
 
 var title_screen = preload("res://scenes/tscn/title_screen.tscn").instantiate() as Control
 var play_button = title_screen.get_node("PlayButton") as Button
-var level_4 = preload("res://scenes/tscn/levels/level_4.tscn").instantiate()
+var level_1 = preload("res://scenes/tscn/levels/level_1.tscn").instantiate()
 
 func _ready() -> void:
 	
@@ -13,4 +13,4 @@ func _ready() -> void:
 
 func _on_play_pressed():
 	play_button.queue_free()
-	add_child(level_4)
+	add_child(level_1)
