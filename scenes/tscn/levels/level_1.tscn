@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://gamhesjv88m"]
+
+[ext_resource type="Script" uid="uid://0s2hcaql1i83" path="res://scenes/scripts/password.gd" id="1_ed1tg"]
+
+[node name="Level 1" type="Control" unique_id=1220374426]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="LineEdit" parent="." unique_id=1740049369]
+layout_mode = 0
+offset_left = 785.0
+offset_top = 520.0
+offset_right = 1135.0
+offset_bottom = 560.0
+alignment = 1
+max_length = 20
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+script = ExtResource("1_ed1tg")
+
+[connection signal="text_submitted" from="TextEdit" to="TextEdit" method="_on_text_submitted"]

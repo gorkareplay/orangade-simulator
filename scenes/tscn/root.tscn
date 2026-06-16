@@ -1,19 +1,6 @@
 [gd_scene format=3 uid="uid://dljtfev78hjfp"]
 
 [ext_resource type="Script" uid="uid://npmr3rsgcpvu" path="res://scenes/scripts/root.gd" id="1_pyidc"]
-[ext_resource type="PackedScene" uid="uid://dkqi6cvoew85t" path="res://scenes/tscn/player.tscn" id="2_pyidc"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_pyidc"]
-a = Vector2(-2, -1)
-b = Vector2(-1, 649)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_28aoi"]
-a = Vector2(-3, 647)
-b = Vector2(1157, 648)
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_jnlp7"]
-a = Vector2(1154, 1)
-b = Vector2(1156, 647)
 
 [node name="Root" type="Node2D" unique_id=391741415]
 script = ExtResource("1_pyidc")
