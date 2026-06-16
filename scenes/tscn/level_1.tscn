@@ -92,6 +92,15 @@ scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
 texture = SubResource("GradientTexture2D_alh7e")
 
+[node name="Tile extra" type="TextureRect" parent="Tiles" unique_id=1192467237]
+offset_left = 362.0
+offset_top = 215.0
+offset_right = 426.0
+offset_bottom = 279.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(32, 32)
+texture = SubResource("GradientTexture2D_alh7e")
+
 [node name="Lemons" type="Node2D" parent="." unique_id=703086454]
 
 [node name="Lemon placeholder 1" type="TextureRect" parent="Lemons" unique_id=854547185]
