@@ -10,7 +10,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextEdit" type="LineEdit" parent="." unique_id=1740049369]
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1740049369]
 layout_mode = 0
 offset_left = 785.0
 offset_top = 520.0
@@ -26,4 +26,5 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 script = ExtResource("1_ed1tg")
 
-[connection signal="text_submitted" from="TextEdit" to="TextEdit" method="_on_text_submitted"]
+[connection signal="level_1_complete" from="LineEdit" to="LineEdit" method="_on_level_1_complete"]
+[connection signal="text_submitted" from="LineEdit" to="LineEdit" method="_on_text_submitted"]
