@@ -21,62 +21,62 @@ anchors_preset = 0
 script = ExtResource("1_apuvo")
 
 [node name="Palm" type="Sprite2D" parent="." unique_id=1780509329]
-position = Vector2(983, 419)
+position = Vector2(1321, 537.0625)
 scale = Vector2(2.6562502, 3.6259766)
 texture = ExtResource("2_atkuy")
 
 [node name="Tiles" type="Node2D" parent="." unique_id=697437286]
 
 [node name="Tile 1" type="TextureRect" parent="Tiles" unique_id=1127018596]
-offset_left = 62.0
-offset_top = 415.0
-offset_right = 126.0
-offset_bottom = 479.0
+offset_left = 400.0
+offset_top = 533.0625
+offset_right = 464.0
+offset_bottom = 597.0625
 scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
 texture = SubResource("GradientTexture2D_alh7e")
 
 [node name="Tile 2" type="TextureRect" parent="Tiles" unique_id=1255336231]
-offset_left = 212.0
-offset_top = 415.0
-offset_right = 276.0
-offset_bottom = 479.0
+offset_left = 550.0
+offset_top = 533.0625
+offset_right = 614.0
+offset_bottom = 597.0625
 scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
 texture = SubResource("GradientTexture2D_alh7e")
 
 [node name="Tile 3" type="TextureRect" parent="Tiles" unique_id=929706919]
-offset_left = 362.0
-offset_top = 415.0
-offset_right = 426.0
-offset_bottom = 479.0
+offset_left = 700.0
+offset_top = 533.0625
+offset_right = 764.0
+offset_bottom = 597.0625
 scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
 texture = SubResource("GradientTexture2D_alh7e")
 
 [node name="Tile 4" type="TextureRect" parent="Tiles" unique_id=474155992]
-offset_left = 512.0
-offset_top = 415.0
-offset_right = 576.0
-offset_bottom = 479.0
+offset_left = 850.0
+offset_top = 533.0625
+offset_right = 914.0
+offset_bottom = 597.0625
 scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
 texture = SubResource("GradientTexture2D_alh7e")
 
 [node name="Tile 5" type="TextureRect" parent="Tiles" unique_id=1415166629]
-offset_left = 662.0
-offset_top = 415.0
-offset_right = 726.0
-offset_bottom = 479.0
+offset_left = 1000.0
+offset_top = 533.0625
+offset_right = 1064.0
+offset_bottom = 597.0625
 scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
 texture = SubResource("GradientTexture2D_alh7e")
 
 [node name="Tile extra" type="TextureRect" parent="Tiles" unique_id=1192467237]
-offset_left = 362.0
-offset_top = 265.0
-offset_right = 426.0
-offset_bottom = 329.0
+offset_left = 700.0
+offset_top = 383.0625
+offset_right = 764.0
+offset_bottom = 447.0625
 scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
 texture = SubResource("GradientTexture2D_alh7e")
@@ -84,46 +84,46 @@ texture = SubResource("GradientTexture2D_alh7e")
 [node name="Lemons" type="Node2D" parent="." unique_id=703086454]
 
 [node name="Lemon 1" type="TextureRect" parent="Lemons" unique_id=854547185]
-offset_left = 662.0
-offset_top = 415.0
-offset_right = 726.0
-offset_bottom = 479.0
+offset_left = 1000.0
+offset_top = 533.0625
+offset_right = 1064.0
+offset_bottom = 597.0625
 scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
 texture = ExtResource("2_v0118")
 
 [node name="Lemon 2" type="TextureRect" parent="Lemons" unique_id=1721816347]
-offset_left = 512.0
-offset_top = 415.0
-offset_right = 576.0
-offset_bottom = 479.0
+offset_left = 850.0
+offset_top = 533.0625
+offset_right = 914.0
+offset_bottom = 597.0625
 scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
 texture = ExtResource("3_atkuy")
 
 [node name="Lemon 3" type="TextureRect" parent="Lemons" unique_id=1720442602]
-offset_left = 362.0
-offset_top = 415.0
-offset_right = 426.0
-offset_bottom = 479.0
+offset_left = 700.0
+offset_top = 533.0625
+offset_right = 764.0
+offset_bottom = 597.0625
 scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
 texture = ExtResource("4_6irux")
 
 [node name="Lemon 4" type="TextureRect" parent="Lemons" unique_id=567699242]
-offset_left = 62.0
-offset_top = 415.0
-offset_right = 126.0
-offset_bottom = 479.0
+offset_left = 400.0
+offset_top = 533.0625
+offset_right = 464.0
+offset_bottom = 597.0625
 scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
 texture = ExtResource("5_di16p")
 
 [node name="Lemon 5" type="TextureRect" parent="Lemons" unique_id=1944631135]
-offset_left = 212.0
-offset_top = 415.0
-offset_right = 276.0
-offset_bottom = 479.0
+offset_left = 550.0
+offset_top = 533.0625
+offset_right = 614.0
+offset_bottom = 597.0625
 scale = Vector2(2, 2)
 pivot_offset = Vector2(32, 32)
 texture = ExtResource("6_1wx8g")
