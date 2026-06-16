@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://gaa7ny8v4055"]
+
+[ext_resource type="Script" uid="uid://vakdyftdtcau" path="res://scenes/scripts/level_2.gd" id="1_5hg41"]
+
+[node name="Level 2" type="Control" unique_id=1446106458]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5hg41")
