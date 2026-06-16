@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://npmr3rsgcpvu" path="res://scenes/scripts/root.gd" id="1_pyidc"]
 <<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://dkqi6cvoew85t" path="res://scenes/tscn/player.tscn" id="2_pyidc"]
-[ext_resource type="PackedScene" uid="uid://bxx6tve6i24v7" path="res://scenes/tscn/level_1.tscn" id="4_d78n2"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_pyidc"]
 a = Vector2(-2, -1)
@@ -120,10 +119,6 @@ shape = SubResource("SegmentShape2D_28aoi")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=338674152]
 shape = SubResource("SegmentShape2D_jnlp7")
-
-[node name="levels" type="Node2D" parent="." unique_id=1158275628]
-
-[node name="Level 1" parent="levels" unique_id=1319321187 instance=ExtResource("4_d78n2")]
 
 [connection signal="timeout" from="Timer/Timer" to="." method="_on_timer_timeout"]
 =======
