@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dg7oisp5k6jpf"]
 
+[ext_resource type="Script" uid="uid://cjdewe46o804b" path="res://scenes/scripts/level_3.gd" id="1_lmvqm"]
+
 [node name="Level 3" type="Control" unique_id=564206083]
 layout_mode = 3
 anchors_preset = 15
@@ -12,3 +14,16 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 1918.0
 offset_bottom = 1078.0
+
+[node name="Walls" type="Control" parent="." unique_id=1450860826]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_lmvqm")
+
+[node name="Wall 1" type="ColorRect" parent="Walls" unique_id=1442461620]
+layout_mode = 0
+offset_left = 682.0
+offset_top = 544.0
+offset_right = 992.0
+offset_bottom = 552.0

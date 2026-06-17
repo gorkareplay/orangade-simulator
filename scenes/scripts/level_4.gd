@@ -58,5 +58,5 @@ func _drop_data(at_position:Vector2, data:Variant)-> void:
 	drag_data.item.show()
 func _on_drag_completed(data: Drag) -> void:
 	data.item.show()
-	if configuration == { &"Tile 1": &"Lemon 1", &"Tile 2": &"Lemon 2", &"Tile 3": &"Lemon 3", &"Tile 4": &"Lemon 4", &"Tile 5": &"Lemon 5", &"Tile extra": null }:
+	if configuration == { &"Tile 1": &"Lemon 1", &"Tile 2": &"Lemon 2", &"Tile 3": &"Lemon 3", &"Tile 4": &"Lemon 4", &"Tile 5": &"Lemon 5", &"Tile extra": null } or configuration == { &"Tile 1": &"Lemon 5", &"Tile 2": &"Lemon 4", &"Tile 3": &"Lemon 3", &"Tile 4": &"Lemon 2", &"Tile 5": &"Lemon 1", &"Tile extra": null }:
 		emit_signal("level_4_complete")

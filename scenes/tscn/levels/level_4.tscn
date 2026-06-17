@@ -21,6 +21,7 @@ anchors_preset = 0
 script = ExtResource("1_apuvo")
 
 [node name="Palm" type="Sprite2D" parent="." unique_id=1780509329]
+texture_filter = 3
 position = Vector2(1321, 537.0625)
 scale = Vector2(2.6562502, 3.6259766)
 texture = ExtResource("2_atkuy")
@@ -84,6 +85,7 @@ texture = SubResource("GradientTexture2D_alh7e")
 [node name="Lemons" type="Node2D" parent="." unique_id=703086454]
 
 [node name="Lemon 1" type="TextureRect" parent="Lemons" unique_id=854547185]
+texture_filter = 3
 offset_left = 1000.0
 offset_top = 533.0625
 offset_right = 1064.0
@@ -93,6 +95,7 @@ pivot_offset = Vector2(32, 32)
 texture = ExtResource("2_v0118")
 
 [node name="Lemon 2" type="TextureRect" parent="Lemons" unique_id=1721816347]
+texture_filter = 3
 offset_left = 850.0
 offset_top = 533.0625
 offset_right = 914.0
@@ -102,6 +105,7 @@ pivot_offset = Vector2(32, 32)
 texture = ExtResource("3_atkuy")
 
 [node name="Lemon 3" type="TextureRect" parent="Lemons" unique_id=1720442602]
+texture_filter = 3
 offset_left = 700.0
 offset_top = 533.0625
 offset_right = 764.0
@@ -111,6 +115,7 @@ pivot_offset = Vector2(32, 32)
 texture = ExtResource("4_6irux")
 
 [node name="Lemon 4" type="TextureRect" parent="Lemons" unique_id=567699242]
+texture_filter = 3
 offset_left = 400.0
 offset_top = 533.0625
 offset_right = 464.0
@@ -120,6 +125,7 @@ pivot_offset = Vector2(32, 32)
 texture = ExtResource("5_di16p")
 
 [node name="Lemon 5" type="TextureRect" parent="Lemons" unique_id=1944631135]
+texture_filter = 3
 offset_left = 550.0
 offset_top = 533.0625
 offset_right = 614.0
