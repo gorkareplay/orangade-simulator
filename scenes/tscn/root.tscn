@@ -1,6 +1,23 @@
 [gd_scene format=3 uid="uid://dljtfev78hjfp"]
 
 [ext_resource type="Script" uid="uid://npmr3rsgcpvu" path="res://scenes/scripts/root.gd" id="1_pyidc"]
+[ext_resource type="FontFile" uid="uid://d0dxnoalrpv4t" path="res://assets/font.ttf" id="2_m8vay"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r1m5e"]
+font = ExtResource("2_m8vay")
+font_size = 60
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Root" type="Node2D" unique_id=391741415]
 script = ExtResource("1_pyidc")
+
+[node name="Aptyp" type="Label" parent="." unique_id=1250425270]
+z_index = 5
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 1920.0
+offset_bottom = 227.0
+label_settings = SubResource("LabelSettings_r1m5e")
+horizontal_alignment = 1
+justification_flags = 227
