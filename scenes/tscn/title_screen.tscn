@@ -22,5 +22,6 @@ offset_top = 500.0
 offset_right = 1156.0
 offset_bottom = 586.9992
 theme_override_fonts/font = ExtResource("2_o1m0s")
-text = "play"
+theme_override_font_sizes/font_size = 64
+text = "Play"
 icon_alignment = 1
