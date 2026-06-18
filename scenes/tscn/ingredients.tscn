@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://mgk5407se8c6"]
+
+[ext_resource type="Texture2D" uid="uid://tuvssrni7w7v" path="res://assets/ingredients/bottle_gas_water_.png" id="1_hytap"]
+[ext_resource type="Texture2D" uid="uid://sx0jxa1vy8tt" path="res://assets/ingredients/lemon_wave1.png" id="2_wncj5"]
+[ext_resource type="Texture2D" uid="uid://cypy7xcnlp3qp" path="res://assets/ingredients/mint.png" id="3_yq5dk"]
+[ext_resource type="Texture2D" uid="uid://dfmbq8815jtjr" path="res://assets/ingredients/sugar_v1.png" id="4_156l7"]
+[ext_resource type="Texture2D" uid="uid://5wt25qsth7k4" path="res://assets/ingredients/lemonade_gas.png" id="5_wncj5"]
+
+[node name="Ingredients" type="Control" unique_id=661623443]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Water" type="TextureRect" parent="." unique_id=1503026153]
+z_index = 2
+texture_filter = 1
+use_parent_material = true
+layout_mode = 0
+offset_left = 864.0
+offset_top = -226.0
+offset_right = 928.0
+offset_bottom = -162.0
+scale = Vector2(2, 2)
+texture = ExtResource("1_hytap")
+
+[node name="Lemon" type="TextureRect" parent="." unique_id=1312618035]
+z_index = 2
+texture_filter = 1
+use_parent_material = true
+layout_mode = 0
+offset_left = 244.0
+offset_top = -245.0
+offset_right = 308.0
+offset_bottom = -181.0
+scale = Vector2(2, 2)
+texture = ExtResource("2_wncj5")
+
+[node name="Mint" type="TextureRect" parent="." unique_id=1742781766]
+z_index = 2
+texture_filter = 1
+use_parent_material = true
+layout_mode = 0
+offset_left = 1242.0
+offset_top = -233.0
+offset_right = 1306.0
+offset_bottom = -169.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_yq5dk")
+
+[node name="Sugar" type="TextureRect" parent="." unique_id=1945239811]
+z_index = 2
+texture_filter = 1
+use_parent_material = true
+layout_mode = 0
+offset_left = 582.0
+offset_top = -237.0
+offset_right = 646.0
+offset_bottom = -173.0
+scale = Vector2(2, 2)
+texture = ExtResource("4_156l7")
+
+[node name="Lemonade" type="TextureRect" parent="." unique_id=186019104]
+visible = false
+z_index = 3
+texture_filter = 1
+layout_mode = 0
+offset_left = 769.0
+offset_top = -354.0
+offset_right = 833.0
+offset_bottom = -290.0
+scale = Vector2(2, 2)
+texture = ExtResource("5_wncj5")
