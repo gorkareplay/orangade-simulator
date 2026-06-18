@@ -57,6 +57,7 @@ func _drop_data(at_position:Vector2, data:Variant)-> void:
 		configuration[tile_at(at_position).name] = drag_data.item.name
 	add_item_at(drag_data.item, at_position)
 	drag_data.item.show()
+
 func _on_drag_completed(data: Drag) -> void:
 	data.item.show()
 	if fired == false:

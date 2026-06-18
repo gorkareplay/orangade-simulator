@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://blhym0ddsa6r"]
+
+[ext_resource type="Texture2D" uid="uid://ufdeew3bm4cf" path="res://assets/Level 2/tile.png" id="1_4oqj8"]
+
+[node name="Tile" type="Sprite2D" unique_id=753140393]
+scale = Vector2(2, 2)
+texture = ExtResource("1_4oqj8")
+
+[node name="Button" type="Button" parent="." unique_id=1040613633]
+z_index = -1
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
