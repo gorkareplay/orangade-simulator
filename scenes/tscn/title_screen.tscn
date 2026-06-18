@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://daqccliji4pjp"]
 
 [ext_resource type="PackedScene" uid="uid://dlyb563gkkao6" path="res://scenes/background/background.tscn" id="1_nup4o"]
+[ext_resource type="FontFile" uid="uid://d0dxnoalrpv4t" path="res://assets/font.ttf" id="2_o1m0s"]
 
 [node name="TitleScreen" type="Control" unique_id=406018498]
 layout_mode = 3
@@ -20,5 +21,6 @@ offset_left = 745.0
 offset_top = 500.0
 offset_right = 1156.0
 offset_bottom = 586.9992
+theme_override_fonts/font = ExtResource("2_o1m0s")
 text = "play"
 icon_alignment = 1

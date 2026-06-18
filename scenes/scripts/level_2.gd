@@ -2,7 +2,7 @@ extends Control
 
 signal level_2_complete
 var tile_path = preload("res://scenes/tscn/tile.tscn")
-var scoring_tiles: Array = [6, 7, 11, 12, 33, 34, 36, 39, 53, 54, 55, 56, 70, 71, 72, 75, 76, 85, 86, 91, 93, 95, 96]
+var scoring_tiles: Array = [6, 7, 11, 12, 33, 34, 36, 39, 53, 54, 55, 56, 70, 71, 72, 76, 86, 91, 93, 96]
 
 var tile_tick = preload("res://assets/Level 2/tile_tick.png")
 var tile_cross = preload("res://assets/Level 2/tile_cross.png")
