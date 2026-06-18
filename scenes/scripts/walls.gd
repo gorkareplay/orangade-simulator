@@ -1,7 +1,7 @@
 extends Node2D
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if Input.is_action_pressed("left"):
-		self.rotate(-0.015)
+		self.rotate(-0.5 * delta)
 	if Input.is_action_pressed("right"):
-		self.rotate(0.015)
+		self.rotate(0.5 * delta)

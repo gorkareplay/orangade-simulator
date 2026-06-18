@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://npmr3rsgcpvu" path="res://scenes/scripts/root.gd" id="1_pyidc"]
 [ext_resource type="FontFile" uid="uid://d0dxnoalrpv4t" path="res://assets/font.ttf" id="2_m8vay"]
+[ext_resource type="AudioStream" uid="uid://blicua0brdj65" path="res://assets/sounds/talking.wav" id="3_r1m5e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r1m5e"]
 font = ExtResource("2_m8vay")
@@ -29,3 +30,7 @@ offset_right = 1930.0
 offset_bottom = 1095.0
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
+
+[node name="AudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1577497682]
+stream = ExtResource("3_r1m5e")
+volume_db = 8.0

@@ -18,6 +18,7 @@ var level_4 = preload("res://scenes/tscn/levels/level_4.tscn").instantiate()
 
 @onready var label = $Aptyp
 @onready var flash = $Flash
+@onready var audio_player = $AudioPlayer
 
 func _ready() -> void:
 	
@@ -27,22 +28,25 @@ func _ready() -> void:
 	add_child(ingredients)
 	
 	play_button.pressed.connect(_on_play_pressed)
-
+	_on_level_4_complete()
+	
 func aptyp(line: String, delay: float = 0.1, time: float = 1.0) -> void:
 	label.visible_characters = 0
 	label.text = line
 	
 	for i in range(len(line)):
 		label.visible_characters = i + 1
+		audio_player.pitch_scale = randf_range(0.90, 1.10)
+		audio_player.play()
 		await get_tree().create_timer(delay).timeout
 	await get_tree().create_timer(time).timeout
 	
-func orbit_to_point(node: Node2D, final_position: Vector2, duration: float = 1.0, loops: float = 2.0) -> void:
+func orbit_to_point(node: Control, final_position: Vector2, duration: float = 1.0, loops: float = 2.0) -> void:
 	var offset = node.position - final_position
 	var orbit_func = func(t: float):
 		node.position = final_position + offset.rotated(loops * TAU * t) * (1.0 - t)
 	
-	create_tween().tween_method(orbit_func, 0.0, 1.0, duration)
+	create_tween().tween_method(orbit_func, 0.0, 1.0, duration).set_trans(Tween.TRANS_EXPO)
 	
 func _on_play_pressed():
 	play_button.queue_free()
@@ -89,8 +93,8 @@ func _on_level_2_complete():
 	await aptyp("fine take the ingredient i don't care", 0.05, 2.0)
 	
 	var tween = create_tween()
-	tween.tween_property(water, "position", Vector2(1664.0, 952.0), 4.0).set_trans(Tween.TRANS_ELASTIC)
-	await get_tree().create_timer(5.0).timeout
+	tween.tween_property(water, "position", Vector2(1664.0, 952.0), 3.0).set_trans(Tween.TRANS_ELASTIC)
+	await get_tree().create_timer(4.0).timeout
 	
 	await aptyp("let's go next puzzle", 0.05, 1.0)
 	await aptyp("so this is an impossible labyrinth i made that you need to complete", 0.05, 3.0)
@@ -99,6 +103,7 @@ func _on_level_2_complete():
 	await aptyp("sadly i was not able to finish it so just IGNORE the eraser shavings", 0.05)
 
 func _on_level_3_complete():
+	print("complete")
 	level_3.queue_free()
 	await aptyp("BRUH HOW ARE YOU DOING THIS STOP IT ALREADY!!!", 0.01)
 	await aptyp("good job, i guess", 0.1, 2.0)
@@ -118,18 +123,28 @@ func _on_level_3_complete():
 	
 func _on_level_4_complete():
 	level_4.queue_free()
-	await aptyp("NOOOOOOOOOOOOOOOOOO", 0.01)
+	await aptyp("NOOOOOOOOOOOOOOOOOO", 0.05)
 	await aptyp("")
+	
+	ingredients.visible = true
 	
 	var tween = create_tween()
 	tween.tween_property(lemon, "position", Vector2(1408.0, 952.0), 4.0).set_trans(Tween.TRANS_ELASTIC)
 	await get_tree().create_timer(5.0).timeout
 	
-	for i in ingredients:
-		orbit_to_point(i, Vector2(960.0, 540.0), 10.0, 10.0)
-		
-	for i in range(80):
+	orbit_to_point(mint, Vector2(960.0, 540.0), 10.0, 10.0)
+	orbit_to_point(water, Vector2(960.0, 540.0), 10.0, 10.0)
+	orbit_to_point(sugar, Vector2(960.0, 540.0), 10.0, 10.0)
+	orbit_to_point(lemon, Vector2(960.0, 540.0), 10.0, 10.0)
+	
+	for i in range(100):
 		flash.color.a += 0.01
-	ingredients.hidden = true	
+		await get_tree().create_timer(0.1).timeout
+
+	mint.visible = false
+	water.visible = false
+	sugar.visible = false
+	lemon.visible = false
+	
 	flash.color.a = 0.0
 	lemonade.visible = true
