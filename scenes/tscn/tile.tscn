@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://blhym0ddsa6r"]
 
 [node name="Tile" type="Sprite2D" unique_id=753140393]
-z_index = 2
+light_mask = 0
+z_index = 1
 texture_filter = 1
 scale = Vector2(2, 2)
 
 [node name="Button" type="Button" parent="." unique_id=1040613633]
-z_index = 1
+show_behind_parent = true
+light_mask = 0
+z_index = -1
 offset_left = -16.0
 offset_top = -16.0
 offset_right = 16.0
