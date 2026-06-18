@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 		time += delta
 		$Title.rotation = sin(time * 2.0) * 0.02
 	
-func aptyp(line: String, delay: float = 0.1, time: float = 1.0) -> void:
+func aptyp(line: String, delay: float = 0.1, timeA: float = 1.0) -> void:
 	label.visible_characters = 0
 	label.text = line
 	
@@ -54,7 +54,7 @@ func aptyp(line: String, delay: float = 0.1, time: float = 1.0) -> void:
 		audio_player.pitch_scale = randf_range(0.90, 1.10)
 		audio_player.play()
 		await get_tree().create_timer(delay).timeout
-	await get_tree().create_timer(time).timeout
+	await get_tree().create_timer(timeA).timeout
 	
 func orbit_to_point(node: Control, final_position: Vector2, duration: float = 1.0, loops: float = 2.0) -> void:
 	var offset = node.position - final_position
@@ -136,7 +136,7 @@ func _on_level_3_complete():
 	print("complete")
 	level_3.queue_free()
 	stop_and_save()
-	await aptyp("BRUH HOW ARE YOU DOING THIS STOP IT ALREADY!!!", 0.01)
+	await aptyp("BRUH HOW ARE YOU DOING THIS STOP IT ALREADY!!!", 0.01, 1.0)
 	await aptyp("good job, i guess", 0.1, 2.0)
 	await aptyp("there you go", 0.075, 1.0)
 	

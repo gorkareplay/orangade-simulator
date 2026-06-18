@@ -7,7 +7,14 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_efgdp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o850r"]
-size = Vector2(1924, 18)
+size = Vector2(58, 9)
+
+[sub_resource type="Gradient" id="Gradient_sjtwn"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u02no"]
+gradient = SubResource("Gradient_sjtwn")
 
 [node name="Walls" type="Node2D" unique_id=2138604365]
 
@@ -29,15 +36,100 @@ physics_material_override = SubResource("PhysicsMaterial_efgdp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Wall 2" unique_id=1784987978]
 position = Vector2(-1, 0)
-polygon = PackedVector2Array(-5, -423, -5, -413, 66, -413, 66, -281, -5, -281, -5, -272, 76, -272, 75, -414, 421, -414, 421, -281, 350, -281, 350, -272, 421, -272, 421, 428, 359, 428, 359, 357, 349, 357, 349, 428, 76, 428, 76, 215, 5, 215, 5, 154, 137, 154, 137, 366, 288, 366, 288, 296, 359, 296, 359, -139, 137, -139, 137, 12, 146, 12, 146, -130, 350, -129, 350, 144, 279, 145, 279, 154, 350, 154, 350, 286, 279, 286, 279, 357, 146, 357, 146, 144, -137, 144, -137, 82, -66, 82, -66, 73, -218, 73, -218, 83, -147, 83, -147, 225, -137, 225, -137, 154, -4, 154, -4, 225, 66, 225, 66, 437, 430, 437, 430, -423, 5, -423, 5, -487, -5, -487, -74, -487, -74, -423, -65, -423, -65, -477, -5, -477)
+polygon = PackedVector2Array(-5, -423, -5, -413, 66, -413, 66, -281, -5, -281, -5, -272, 76, -272, 75, -414, 421, -414, 421, -281, 350, -281, 350, -272, 421, -272, 421, 428, 359, 428, 359, 357, 349, 357, 349, 428, 76, 428, 76, 215, 5, 215, 5, 154, 137, 154, 137, 366, 288, 366, 288, 296, 359, 296, 359, -129, 421, -129, 421, -139, 359, -139, 137, -139, 137, 12, 146, 12, 146, -130, 350, -129, 350, 144, 279, 145, 279, 154, 350, 154, 350, 286, 279, 286, 279, 357, 146, 357, 146, 144, -137, 144, -137, 82, -66, 82, -66, 73, -218, 73, -218, 83, -147, 83, -147, 225, -137, 225, -137, 154, -4, 154, -4, 225, 66, 225, 66, 437, 430, 437, 430, -423, 5, -423, 5, -487, -5, -487, -74, -487, -74, -423, -65, -423, -65, -477, -5, -477)
 
 [node name="Polygon2D" type="Polygon2D" parent="Walls/Wall 2" unique_id=1025757973]
 position = Vector2(-1, 0)
-polygon = PackedVector2Array(-5, -423, -5, -413, 66, -413, 66, -281, -5, -281, -5, -272, 76, -272, 75, -414, 421, -414, 421, -281, 350, -281, 350, -272, 421, -272, 421, 428, 359, 428, 359, 357, 349, 357, 349, 428, 76, 428, 76, 215, 5, 215, 5, 154, 137, 154, 137, 366, 288, 366, 288, 296, 359, 296, 359, -139, 137, -139, 137, 12, 146, 12, 146, -130, 350, -129, 350, 144, 279, 145, 279, 154, 350, 154, 350, 286, 279, 286, 279, 357, 146, 357, 146, 144, -137, 144, -137, 82, -66, 82, -66, 73, -218, 73, -218, 83, -147, 83, -147, 225, -137, 225, -137, 154, -4, 154, -4, 225, 66, 225, 66, 437, 430, 437, 430, -423, 5, -423, 5, -487, -5, -487, -74, -487, -74, -423, -65, -423, -65, -477, -5, -477)
+polygon = PackedVector2Array(-5, -423, -5, -413, 66, -413, 66, -281, -5, -281, -5, -272, 76, -272, 75, -414, 421, -414, 421, -281, 350, -281, 350, -272, 421, -272, 421, 428, 359, 428, 359, 357, 349, 357, 349, 428, 76, 428, 76, 215, 5, 215, 5, 154, 137, 154, 137, 366, 288, 366, 288, 296, 359, 296, 359, -129, 421, -129, 421, -139, 359, -139, 137, -139, 137, 12, 146, 12, 146, -130, 350, -129, 350, 144, 279, 145, 279, 154, 350, 154, 350, 286, 279, 286, 279, 357, 146, 357, 146, 144, -137, 144, -137, 82, -66, 82, -66, 73, -218, 73, -218, 83, -147, 83, -147, 225, -137, 225, -137, 154, -4, 154, -4, 225, 66, 225, 66, 437, 430, 437, 430, -423, 5, -423, 5, -487, -5, -487, -74, -487, -74, -423, -65, -423, -65, -477, -5, -477)
 
-[node name="StaticBody2D" type="Area2D" parent="." unique_id=573822819]
-position = Vector2(995, 972)
+[node name="Area2D" type="Area2D" parent="Walls" unique_id=573822819]
+position = Vector2(35, 432)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=722763369]
-position = Vector2(-35, 98)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Area2D" unique_id=722763369]
 shape = SubResource("RectangleShape2D_o850r")
+
+[node name="Shavings" type="Node2D" parent="Walls" unique_id=810223577]
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Shavings" unique_id=225116521]
+position = Vector2(29.000013, -363)
+rotation = 0.5602507
+scale = Vector2(0.47656283, 0.05493495)
+texture = SubResource("GradientTexture2D_u02no")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Walls/Shavings" unique_id=660685282]
+position = Vector2(-2.9999866, -299)
+rotation = 2.2392573
+scale = Vector2(0.47656283, 0.05493495)
+texture = SubResource("GradientTexture2D_u02no")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Walls/Shavings" unique_id=503977039]
+position = Vector2(103.000015, -329)
+rotation = 0.8709193
+scale = Vector2(0.47656283, 0.05493495)
+texture = SubResource("GradientTexture2D_u02no")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Walls/Shavings" unique_id=405926791]
+position = Vector2(262, -379.00003)
+rotation = -0.24958208
+scale = Vector2(0.47656283, 0.05493495)
+texture = SubResource("GradientTexture2D_u02no")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Walls/Shavings" unique_id=1090819899]
+position = Vector2(378, -177.00005)
+rotation = -1.1205014
+scale = Vector2(0.47656283, 0.05493495)
+texture = SubResource("GradientTexture2D_u02no")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Walls/Shavings" unique_id=1109759380]
+position = Vector2(121.00003, -148.99997)
+rotation = -1.1205014
+scale = Vector2(0.47656283, 0.05493495)
+texture = SubResource("GradientTexture2D_u02no")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Walls/Shavings" unique_id=1924629798]
+position = Vector2(218.00002, -100)
+rotation = 0.62133723
+scale = Vector2(0.47656283, 0.05493495)
+texture = SubResource("GradientTexture2D_u02no")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Walls/Shavings" unique_id=1845434372]
+position = Vector2(321, 17)
+rotation = 1.9285889
+scale = Vector2(0.47656283, 0.05493495)
+texture = SubResource("GradientTexture2D_u02no")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Walls/Shavings" unique_id=1905380423]
+position = Vector2(179, 315)
+rotation = 0.68416905
+scale = Vector2(0.47656283, 0.05493495)
+texture = SubResource("GradientTexture2D_u02no")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Walls/Shavings" unique_id=1880147619]
+position = Vector2(77, 116)
+rotation = 3.3597589
+scale = Vector2(0.47656283, 0.05493495)
+texture = SubResource("GradientTexture2D_u02no")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Walls/Shavings" unique_id=1917781502]
+position = Vector2(-60, 37)
+rotation = 2.4347343
+scale = Vector2(0.47656283, 0.05493495)
+texture = SubResource("GradientTexture2D_u02no")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Walls/Shavings" unique_id=1753837880]
+position = Vector2(-229, 116)
+rotation = 1.2531464
+scale = Vector2(0.47656283, 0.05493495)
+texture = SubResource("GradientTexture2D_u02no")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Walls/Shavings" unique_id=667336764]
+position = Vector2(-108.000015, 236.00005)
+rotation = 0.56897736
+scale = Vector2(0.47656283, 0.05493495)
+texture = SubResource("GradientTexture2D_u02no")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Walls/Shavings" unique_id=1148395898]
+position = Vector2(32.999985, 293.99997)
+rotation = 1.5271631
+scale = Vector2(0.47656283, 0.05493495)
+texture = SubResource("GradientTexture2D_u02no")

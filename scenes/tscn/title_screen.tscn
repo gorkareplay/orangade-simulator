@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dlyb563gkkao6" path="res://scenes/background/background.tscn" id="1_nup4o"]
 [ext_resource type="FontFile" uid="uid://d0dxnoalrpv4t" path="res://assets/font.ttf" id="2_o1m0s"]
+[ext_resource type="Texture2D" uid="uid://cyki1e08fy4gm" path="res://assets/Level 4/palm.png" id="3_2yajb"]
 
 [node name="TitleScreen" type="Control" unique_id=406018498]
 layout_mode = 3
@@ -25,3 +26,9 @@ theme_override_fonts/font = ExtResource("2_o1m0s")
 theme_override_font_sizes/font_size = 64
 text = "Play"
 icon_alignment = 1
+
+[node name="Palm" type="Sprite2D" parent="PlayButton" unique_id=1032025070]
+texture_filter = 3
+position = Vector2(778, 214)
+scale = Vector2(4.2500014, 5.710937)
+texture = ExtResource("3_2yajb")
