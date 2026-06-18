@@ -15,6 +15,7 @@ var line_edit = level_1.get_node("LineEdit") as LineEdit
 var level_2 = preload("res://scenes/tscn/levels/level_2.tscn").instantiate() as Control
 var level_3 = preload("res://scenes/tscn/levels/level_3.tscn").instantiate()
 var level_4 = preload("res://scenes/tscn/levels/level_4.tscn").instantiate()
+var credits = preload("res://scenes/tscn/credits.tscn").instantiate() as Control
 
 @onready var label = $Aptyp
 @onready var flash = $Flash
@@ -22,12 +23,13 @@ var level_4 = preload("res://scenes/tscn/levels/level_4.tscn").instantiate()
 @onready var music_player = $MusicPlayer
 @onready var title = $Title
 
-var waves = preload("res://assets/sounds/waves.wav")
-var main_theme = preload("res://assets/sounds/main_theme.wav")
-var ending_part = preload("res://assets/sounds/ending_part.wav")
+var waves = preload("res://assets/sounds/waves.ogg")
+var main_theme = preload("res://assets/sounds/main_theme.ogg")
+var ragtime = preload("res://assets/sounds/ragtime_theme.ogg")
 
 var saved_positon: float = 0.0
 var time: float = 0.0
+var credits_active: bool = false
 
 func _ready() -> void:
 	title_screen.position = Vector2.ZERO
@@ -36,14 +38,18 @@ func _ready() -> void:
 	
 	play_button.pressed.connect(_on_play_pressed)
 	music_player.stream = waves
+	music_player.stream.loop = true
 	music_player.play()
 	
 	$Title.pivot_offset = Vector2($Title.size.x / 2, $Title.size.y / 2)
-	
+
 func _process(delta: float) -> void:
 	if title:
 		time += delta
 		$Title.rotation = sin(time * 2.0) * 0.02
+	if credits_active:
+		time += delta
+		credits.rotation = sin(time * 2.0) * 0.01
 	
 func aptyp(line: String, delay: float = 0.1, timeA: float = 1.0) -> void:
 	label.visible_characters = 0
@@ -73,6 +79,7 @@ func _on_play_pressed():
 	
 	music_player.stop()
 	music_player.stream = main_theme
+	music_player.stream.loop = true
 	music_player.play()
 	
 	await aptyp("hey")
@@ -130,7 +137,8 @@ func _on_level_2_complete():
 	await aptyp("so this is an impossible labyrinth i made that you need to complete", 0.05, 3.0)
 	add_child(level_3)
 	level_3.level_3_complete.connect(_on_level_3_complete)
-	await aptyp("sadly i was not able to finish it so just IGNORE the eraser shavings", 0.05)
+	await aptyp("sadly i was not able to finish it")
+	await aptyp("so just IGNORE the eraser shavings, and DO NOT USE the arrow keys", 0.05)
 
 func _on_level_3_complete():
 	print("complete")
@@ -155,8 +163,8 @@ func _on_level_3_complete():
 	
 func _on_level_4_complete():
 	level_4.queue_free()
-	await aptyp("NOOOOOOOOOOOOOOOOOO", 0.05)
-	await aptyp("")
+	stop_and_save()
+	aptyp("NOOOOOOOOOOOOOOOOOO", 0.075)
 	
 	ingredients.visible = true
 	
@@ -164,15 +172,22 @@ func _on_level_4_complete():
 	tween.tween_property(lemon, "position", Vector2(1408.0, 952.0), 4.0).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 	await get_tree().create_timer(5.0).timeout
 	
-	orbit_to_point(mint, Vector2(960.0, 540.0), 10.0, 10.0)
-	orbit_to_point(water, Vector2(960.0, 540.0), 10.0, 10.0)
-	orbit_to_point(sugar, Vector2(960.0, 540.0), 10.0, 10.0)
-	orbit_to_point(lemon, Vector2(960.0, 540.0), 10.0, 10.0)
+	aptyp("")
 	
-	for i in range(100):
-		flash.color.a += 0.01
+	music_player.stop()
+	music_player.stream = ragtime
+	music_player.stream.loop = true
+	music_player.play()
+	
+	orbit_to_point(mint, Vector2(845.0, 403.0), 9.0, 6.0)
+	orbit_to_point(water, Vector2(845.0, 403.0), 9.0, 6.0)
+	orbit_to_point(sugar, Vector2(845.0, 403.0), 9.0, 6.0)
+	orbit_to_point(lemon, Vector2(845.0, 403.0), 9.0, 6.0)
+	
+	for i in range(90):
+		flash.color.a += 0.0111
 		await get_tree().create_timer(0.1).timeout
-
+	
 	mint.visible = false
 	water.visible = false
 	sugar.visible = false
@@ -180,3 +195,6 @@ func _on_level_4_complete():
 	
 	flash.color.a = 0.0
 	lemonade.visible = true
+	add_child(credits)
+	credits.pivot_offset = Vector2(credits.size.x / 2, credits.size.y / 2)
+	credits_active = true

@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dq1d6utues0lo"]
+
+[ext_resource type="FontFile" uid="uid://d0dxnoalrpv4t" path="res://assets/font.ttf" id="1_s3pwn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hludj"]
+font = ExtResource("1_s3pwn")
+font_size = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_61tfo"]
+font = ExtResource("1_s3pwn")
+font_size = 49
+
+[node name="Credits" type="Control" unique_id=108384720]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=194688643]
+layout_mode = 0
+offset_left = 834.0
+offset_top = 129.0
+offset_right = 1742.0
+offset_bottom = 429.0
+text = "thanks for playing, 
+enjoy your lemonade!!!"
+label_settings = SubResource("LabelSettings_hludj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Label" unique_id=946947464]
+layout_mode = 0
+offset_left = -5.0
+offset_top = 322.0
+offset_right = 935.0
+offset_bottom = 821.0
+text = "the legendary dev team:
+
+untugo - developer
+
+gorkareplay - another developer
+
+venikkmz - the legendary artmaker
+
+Athan Doerr a.k.a memerman123 - the magical musician"
+label_settings = SubResource("LabelSettings_61tfo")
