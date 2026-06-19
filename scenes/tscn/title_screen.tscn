@@ -17,7 +17,6 @@ mouse_filter = 1
 position = Vector2(-20, -38)
 
 [node name="PlayButton" type="Button" parent="." unique_id=1903587170]
-visible = false
 layout_mode = 0
 offset_left = 743.0
 offset_top = 537.0
