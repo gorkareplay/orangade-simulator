@@ -85,7 +85,7 @@ func _on_play_pressed():
 	await aptyp("what the hell are you doing in my game?", 0.05, 2.0)
 	await aptyp("you want lemonade to cool down from the excruciating heat?...", 0.05, 2.0)
 	await aptyp("okay", 0.05, 0.5)
-	await aptyp("in order to get your lemonade, you need to solve 4 puzzles made by me, the great Артур", 0.05, 2.0)
+	await aptyp("in order to get your lemonade, you need to solve 4 puzzles made by me, the great Aptyp", 0.05, 2.0)
 	await aptyp("in this puzzle you need to guess the code", 0.05, 2.0)
 	await aptyp("the code is 1234, but since you're EMPTY headed there is NOTHING you can do", 0.1, 1.0)
 	
@@ -163,7 +163,7 @@ func _on_level_3_complete():
 func _on_level_4_complete():
 	level_4.queue_free()
 	stop_and_save()
-	aptyp("NOOOOOOOOOOOOOOOOOO", 0.075)
+	aptyp("NOOOOOOOOOOOOOOOOOO", 0.075, 2.0)
 	
 	ingredients.visible = true
 	
