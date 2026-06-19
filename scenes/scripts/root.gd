@@ -79,7 +79,6 @@ func _on_play_pressed():
 	
 	music_player.stop()
 	music_player.stream = main_theme
-	music_player.stream.loop = true
 	music_player.play()
 	
 	await aptyp("hey")
@@ -176,7 +175,6 @@ func _on_level_4_complete():
 	
 	music_player.stop()
 	music_player.stream = ragtime
-	music_player.stream.loop = true
 	music_player.play()
 	
 	orbit_to_point(mint, Vector2(845.0, 403.0), 9.0, 6.0)
