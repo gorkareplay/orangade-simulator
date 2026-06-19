@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://ipvs1r4ldls3"]
 
 [ext_resource type="Script" uid="uid://ctbj02thbosqn" path="res://scenes/scripts/walls.gd" id="1_sjtwn"]
+[ext_resource type="Texture2D" uid="uid://cxlux3ls3opt6" path="res://assets/arrow-left.svg" id="2_yvbrl"]
+[ext_resource type="Texture2D" uid="uid://cipgjimgptw75" path="res://assets/arrow-right.svg" id="3_go2cy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lmvqm"]
 
@@ -136,21 +138,21 @@ texture = SubResource("GradientTexture2D_u02no")
 
 [node name="Left" type="Button" parent="." unique_id=641941276]
 texture_filter = 3
-offset_left = 1599.0
-offset_top = 881.0
-offset_right = 1631.0
-offset_bottom = 913.0
-scale = Vector2(4, 4)
-text = "←"
+offset_left = 1558.0
+offset_top = 681.0
+offset_right = 2206.0
+offset_bottom = 1329.0
+scale = Vector2(0.25, 0.25)
+icon = ExtResource("2_yvbrl")
 
 [node name="Right" type="Button" parent="." unique_id=882242275]
 texture_filter = 3
-offset_left = 1752.0
-offset_top = 881.0
-offset_right = 1784.0
-offset_bottom = 913.0
-scale = Vector2(4, 4)
-text = "→"
+offset_left = 1758.0
+offset_top = 681.0
+offset_right = 2406.0
+offset_bottom = 1329.0
+scale = Vector2(0.25, 0.25)
+icon = ExtResource("3_go2cy")
 
 [connection signal="button_down" from="Left" to="Walls" method="_on_left_button_down"]
 [connection signal="button_up" from="Left" to="Walls" method="_on_left_button_up"]
