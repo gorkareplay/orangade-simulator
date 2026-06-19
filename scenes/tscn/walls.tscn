@@ -133,3 +133,26 @@ position = Vector2(32.999985, 293.99997)
 rotation = 1.5271631
 scale = Vector2(0.47656283, 0.05493495)
 texture = SubResource("GradientTexture2D_u02no")
+
+[node name="Left" type="Button" parent="." unique_id=641941276]
+texture_filter = 3
+offset_left = 1599.0
+offset_top = 881.0
+offset_right = 1631.0
+offset_bottom = 913.0
+scale = Vector2(4, 4)
+text = "←"
+
+[node name="Right" type="Button" parent="." unique_id=882242275]
+texture_filter = 3
+offset_left = 1752.0
+offset_top = 881.0
+offset_right = 1784.0
+offset_bottom = 913.0
+scale = Vector2(4, 4)
+text = "→"
+
+[connection signal="button_down" from="Left" to="Walls" method="_on_left_button_down"]
+[connection signal="button_up" from="Left" to="Walls" method="_on_left_button_up"]
+[connection signal="button_down" from="Right" to="Walls" method="_on_right_button_down"]
+[connection signal="button_up" from="Right" to="Walls" method="_on_right_button_up"]
