@@ -27,6 +27,7 @@ func intersects_tile(at_position: Vector2) -> bool:
 		if child.get_global_rect().has_point(at_position):
 			return true
 	return false
+
 func _get_drag_data(at_position:Vector2)-> Variant:
 	var item := item_at(at_position)
 	if item == null: return null
@@ -43,7 +44,8 @@ func _get_drag_data(at_position:Vector2)-> Variant:
 
 func _can_drop_data(at_position:Vector2, data:Variant)-> bool:
 	if !data is Drag: return false
-	if configuration[tile_at(at_position).name] != null: return false
+	if tile_at(at_position) != null:
+		if configuration[tile_at(at_position).name] != null: return false
 	return intersects_tile(at_position)
 
 func _drop_data(at_position:Vector2, data:Variant)-> void:
@@ -53,7 +55,7 @@ func _drop_data(at_position:Vector2, data:Variant)-> void:
 	for key in configuration:
 		if configuration[key] == (drag_data.item.name):
 			configuration[key] = null
-	if tile_at(at_position):
+	if tile_at(at_position) != null:
 		configuration[tile_at(at_position).name] = drag_data.item.name
 	add_item_at(drag_data.item, at_position)
 	drag_data.item.show()
