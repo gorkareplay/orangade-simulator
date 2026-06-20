@@ -70,10 +70,6 @@ func orbit_to_point(node: Control, final_position: Vector2, duration: float = 1.
 	
 	create_tween().tween_method(orbit_func, 0.0, 1.0, duration).set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
 	
-func stop_and_save():
-	saved_positon = music_player.get_playback_position()
-	music_player.stop()
-	
 func _on_play_pressed():
 	play_button.queue_free()
 	title.queue_free()
@@ -97,7 +93,6 @@ func _on_play_pressed():
 
 func _on_level_1_complete():
 	level_1.queue_free()
-	stop_and_save()
 	await aptyp("how the hell did you do that", 0.05, 1.0)
 	await aptyp("doesn't matter, here is one of the ingredients", 0.05)
 	
@@ -123,7 +118,6 @@ func _on_second_ship_down():
 	
 func _on_level_2_complete():
 	level_2.queue_free()
-	stop_and_save()
 	await aptyp("dude", 0.01, 0.7)
 	await aptyp("okay you certainly cheated there", 0.05, 1.0)
 	await aptyp("fine take the ingredient i don't care", 0.05, 2.0)
@@ -144,7 +138,6 @@ func _on_level_2_complete():
 func _on_level_3_complete():
 	print("complete")
 	level_3.queue_free()
-	stop_and_save()
 	await aptyp("BRUH HOW ARE YOU DOING THIS STOP IT ALREADY!!!", 0.01, 1.0)
 	await aptyp("good job, i guess", 0.1, 2.0)
 	await aptyp("there you go", 0.075, 1.0)
@@ -164,7 +157,6 @@ func _on_level_3_complete():
 	
 func _on_level_4_complete():
 	level_4.queue_free()
-	stop_and_save()
 	aptyp("NOOOOOOOOOOOOOOOOOO", 0.075, 2.0)
 	
 	ingredients.visible = true
@@ -177,7 +169,6 @@ func _on_level_4_complete():
 	
 	music_player.stop()
 	music_player.stream = ragtime
-	music_player.loop = true
 	music_player.play()
 	
 	orbit_to_point(mint, Vector2(845.0, 403.0), 9.0, 6.0)
@@ -186,7 +177,7 @@ func _on_level_4_complete():
 	orbit_to_point(lemon, Vector2(845.0, 403.0), 9.0, 6.0)
 	
 	for i in range(90):
-		flash.color.a += 0.015
+		flash.color.a += 0.013
 		await get_tree().create_timer(0.1).timeout
 	
 	mint.visible = false
