@@ -145,7 +145,7 @@ func _on_level_2_complete():
 	level_3.level_3_complete.connect(_on_level_3_complete)
 	await aptyp("so this is an impossible labyrinth i made that you need to complete", 0.05, false)
 	await get_tree().create_timer(2.0).timeout
-	await aptyp("sadly i was not able to finish it", 1.0, false)
+	await aptyp("sadly i was not able to finish it", 0.05, false)
 	await get_tree().create_timer(2.0).timeout
 	await aptyp("so just IGNORE the eraser shavings, and DO NOT USE the arrow keys", 0.05, false)
 
@@ -167,7 +167,7 @@ func _on_level_3_complete():
 	add_child(level_4)
 	
 	level_4.level_4_complete.connect(_on_level_4_complete)
-	await aptyp("in this puzzle, you need to sort the fruits by color", 0.05, false)
+	await aptyp("in this puzzle, you need to sort the fruits by color", 0.05)
 	await get_tree().create_timer(2.0).timeout
 	await aptyp("sort them by color, and ignore the NUMBER OF LEAVES", 0.05, false)
 	
