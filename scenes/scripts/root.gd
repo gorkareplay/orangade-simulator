@@ -79,6 +79,7 @@ func _on_play_pressed():
 	
 	music_player.stop()
 	music_player.stream = main_theme
+	music_player.stream.loop = true
 	music_player.play()
 	
 	await aptyp("hey")
@@ -175,6 +176,7 @@ func _on_level_4_complete():
 	
 	music_player.stop()
 	music_player.stream = ragtime
+	music_player.loop = true
 	music_player.play()
 	
 	orbit_to_point(mint, Vector2(845.0, 403.0), 9.0, 6.0)
@@ -183,7 +185,7 @@ func _on_level_4_complete():
 	orbit_to_point(lemon, Vector2(845.0, 403.0), 9.0, 6.0)
 	
 	for i in range(90):
-		flash.color.a += 0.0111
+		flash.color.a += 0.015
 		await get_tree().create_timer(0.1).timeout
 	
 	mint.visible = false
