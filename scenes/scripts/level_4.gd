@@ -1,7 +1,7 @@
 extends Control
 
 signal level_4_complete
-var configuration: Dictionary = { &"Tile 1": &"Lemon 4", &"Tile 2": &"Lemon 5", &"Tile 3": &"Lemon 3", &"Tile 4": &"Lemon 2", &"Tile 5": &"Lemon 1", &"Tile extra": null }
+var configuration: Dictionary = { &"Tile 1": &"Lemon 2", &"Tile 2": &"Lemon 5", &"Tile 3": &"Lemon 3", &"Tile 4": &"Lemon 1", &"Tile 5": &"Lemon 4", &"Tile extra": null }
 var fired: bool = false
 
 func add_item_at(item: TextureRect, at_position: Vector2) -> void:
