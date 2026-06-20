@@ -1,5 +1,6 @@
 extends Node2D
 
+signal wait_confirmation
 var title_screen = preload("res://scenes/tscn/title_screen.tscn").instantiate() as Control
 var play_button = title_screen.get_node("PlayButton") as Button
 
@@ -51,8 +52,12 @@ func _process(delta: float) -> void:
 		time += delta
 		credits.rotation = sin(time * 2.0) * 0.01
 		lemonade.rotation = sin(time * 2.0) * 0.01
-	
-func aptyp(line: String, delay: float = 0.1, timeA: float = 1.0) -> void:
+
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		emit_signal("wait_confirmation")
+
+func aptyp(line: String, delay: float = 0.1, wait: bool = true) -> void:
 	label.visible_characters = 0
 	label.text = line
 	
@@ -61,7 +66,11 @@ func aptyp(line: String, delay: float = 0.1, timeA: float = 1.0) -> void:
 		audio_player.pitch_scale = randf_range(0.90, 1.10)
 		audio_player.play()
 		await get_tree().create_timer(delay).timeout
-	await get_tree().create_timer(timeA).timeout
+	if wait:
+
+		self.get_child(0).show()
+		await self.wait_confirmation
+		self.get_child(0).hide()
 	
 func orbit_to_point(node: Control, final_position: Vector2, duration: float = 1.0, loops: float = 2.0) -> void:
 	var offset = node.position - final_position
@@ -80,12 +89,12 @@ func _on_play_pressed():
 	music_player.play()
 	
 	await aptyp("hey")
-	await aptyp("what the hell are you doing in my game?", 0.05, 2.0)
-	await aptyp("you want lemonade to cool down from the excruciating heat?...", 0.05, 2.0)
-	await aptyp("okay", 0.05, 0.5)
-	await aptyp("in order to get your lemonade, you need to solve 4 puzzles made by me, the great Aptyp", 0.05, 2.0)
-	await aptyp("in this puzzle you need to guess the code", 0.05, 2.0)
-	await aptyp("the code is 1234, but since you're EMPTY headed there is NOTHING you can do", 0.1, 1.0)
+	await aptyp("what the hell are you doing in my game?", 0.05)
+	await aptyp("you want lemonade to cool down from the excruciating heat?...", 0.05)
+	await aptyp("okay", 0.05)
+	await aptyp("in order to get your lemonade, you need to solve 4 puzzles made by me, the great Aptyp", 0.05)
+	await aptyp("in this puzzle you need to guess the code", 0.05)
+	await aptyp("the code is 1234, but since you're EMPTY headed there is NOTHING you can do", 0.1, false)
 	
 	add_child(level_1)
 	line_edit.level_1_complete.connect(_on_level_1_complete)
@@ -95,8 +104,8 @@ func _on_level_1_complete():
 	level_1.queue_free()
 	music_player.stop()
 	
-	await aptyp("how the hell did you do that", 0.05, 1.0)
-	await aptyp("doesn't matter, here is one of the ingredients", 0.05)
+	await aptyp("how the hell did you do that", 0.05)
+	await aptyp("doesn't matter, here is one of the ingredients", 0.05, false)
 	
 	var tween = create_tween()
 	tween.tween_property(mint, "position", Vector2(1792.0, 952.0), 4.0).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
@@ -104,11 +113,11 @@ func _on_level_1_complete():
 	
 	music_player.play()
 	
-	await aptyp("okay next puzzle", 0.05, 0.5)
-	await aptyp("this is a game of battleships, I hope you know the rules", 0.05, 1.0)
-	await aptyp("you are trying to guess the positions of my ships and vice versa", 0.05, 1.0)
-	await aptyp("you can just click to shoot my ships", 0.05, 1.0)
-	await aptyp("you NEED to follow the TURN ORDER", 0.05, 1.0)
+	await aptyp("okay next puzzle", 0.05)
+	await aptyp("this is a game of battleships, I hope you know the rules", 0.05)
+	await aptyp("you are trying to guess the positions of my ships and vice versa", 0.05)
+	await aptyp("you can just click to shoot my ships", 0.05)
+	await aptyp("you NEED to follow the TURN ORDER", 0.05, false)
 	level_2.position = Vector2(415, 70)
 	add_child(level_2)
 	
@@ -116,14 +125,14 @@ func _on_level_1_complete():
 	level_2.second_ship_down.connect(_on_second_ship_down)
 	
 func _on_second_ship_down():
-	await aptyp("hey what are you doing, you can't do that", 0.05)
+	await aptyp("hey what are you doing, you can't do that", 0.05, false)
 	
 func _on_level_2_complete():
 	level_2.queue_free()
 	music_player.stop()
-	await aptyp("dude", 0.01, 0.7)
-	await aptyp("okay you certainly cheated there", 0.05, 1.0)
-	await aptyp("fine take the ingredient i don't care", 0.05, 2.0)
+	await aptyp("dude", 0.01)
+	await aptyp("okay you certainly cheated there", 0.05)
+	await aptyp("fine take the ingredient i don't care", 0.05, false)
 	
 	var tween = create_tween()
 	tween.tween_property(water, "position", Vector2(1664.0, 952.0), 3.0).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
@@ -131,38 +140,41 @@ func _on_level_2_complete():
 	
 	music_player.play()
 	
-	await aptyp("let's go next puzzle", 0.05, 1.0)
-	await aptyp("so this is an impossible labyrinth i made that you need to complete", 0.05, 3.0)
+	await aptyp("let's go next puzzle", 0.05)
 	add_child(level_3)
 	level_3.level_3_complete.connect(_on_level_3_complete)
-	await aptyp("sadly i was not able to finish it")
-	await aptyp("so just IGNORE the eraser shavings, and DO NOT USE the arrow keys", 0.05)
+	await aptyp("so this is an impossible labyrinth i made that you need to complete", 0.05, false)
+	await get_tree().create_timer(2.0).timeout
+	await aptyp("sadly i was not able to finish it", 1.0, false)
+	await get_tree().create_timer(2.0).timeout
+	await aptyp("so just IGNORE the eraser shavings, and DO NOT USE the arrow keys", 0.05, false)
 
 func _on_level_3_complete():
 	print("complete")
 	level_3.queue_free()
 	music_player.stop()
-	await aptyp("BRUH HOW ARE YOU DOING THIS STOP IT ALREADY!!!", 0.01, 1.0)
-	await aptyp("good job, i guess", 0.1, 2.0)
-	await aptyp("there you go", 0.075, 1.0)
+	await aptyp("BRUH HOW ARE YOU DOING THIS STOP IT ALREADY!!!", 0.01)
+	await aptyp("good job, i guess", 0.1)
+	await aptyp("there you go", 0.075, false)
 	
 	var tween = create_tween()
 	tween.tween_property(sugar, "position", Vector2(1536.0, 952.0), 4.0).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 	await get_tree().create_timer(5.0).timeout
 	
 	music_player.play()
-	await aptyp("and so, the final puzzle awaits", 0.05, 2.0)
-	await aptyp("are you ready?", 0.2, 1.0)
+	await aptyp("and so, the final puzzle awaits", 0.05)
+	await aptyp("are you ready?", 0.2)
 	add_child(level_4)
 	
 	level_4.level_4_complete.connect(_on_level_4_complete)
-	await aptyp("in this puzzle, you need to sort the fruits by color", 0.05, 2.0)
-	await aptyp("sort them by color, and ignore the NUMBER OF LEAVES", 0.05)
+	await aptyp("in this puzzle, you need to sort the fruits by color", 0.05, false)
+	await get_tree().create_timer(2.0).timeout
+	await aptyp("sort them by color, and ignore the NUMBER OF LEAVES", 0.05, false)
 	
 func _on_level_4_complete():
 	level_4.queue_free()
 	music_player.stop()
-	aptyp("NOOOOOOOOOOOOOOOOOO", 0.075, 2.0)
+	aptyp("NOOOOOOOOOOOOOOOOOO", 0.075, false)
 	
 	ingredients.visible = true
 	
@@ -170,7 +182,7 @@ func _on_level_4_complete():
 	tween.tween_property(lemon, "position", Vector2(1408.0, 952.0), 4.0).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 	await get_tree().create_timer(5.0).timeout
 	
-	aptyp("")
+	aptyp("", 1.0, false)
 	
 	music_player.stream = ragtime
 	music_player.play()

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://npmr3rsgcpvu" path="res://scenes/scripts/root.gd" id="1_pyidc"]
 [ext_resource type="FontFile" uid="uid://d0dxnoalrpv4t" path="res://assets/font.ttf" id="2_m8vay"]
 [ext_resource type="AudioStream" uid="uid://blicua0brdj65" path="res://assets/sounds/talking.wav" id="3_r1m5e"]
+[ext_resource type="Texture2D" uid="uid://da4xnd3d2t73q" path="res://assets/arrow.png" id="4_d78n2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_r1m5e"]
 font = ExtResource("2_m8vay")
@@ -21,6 +22,17 @@ shadow_size = 0
 
 [node name="Root" type="Node2D" unique_id=391741415]
 script = ExtResource("1_pyidc")
+
+[node name="arrow" type="TextureRect" parent="." unique_id=928784919]
+visible = false
+z_index = 10
+texture_filter = 3
+offset_left = 1758.0
+offset_top = 80.0
+offset_right = 1798.0
+offset_bottom = 120.0
+scale = Vector2(4, 4)
+texture = ExtResource("4_d78n2")
 
 [node name="Aptyp" type="Label" parent="." unique_id=1250425270]
 z_index = 5
